@@ -11,6 +11,7 @@ namespace Api.Controllers
     {
         private readonly IObservacoesRepositorio _observacoesRepositorio;
 
+        //TEste
         public ObservacoesController(IObservacoesRepositorio observacoesRepositorio)
         {
             _observacoesRepositorio = observacoesRepositorio;
