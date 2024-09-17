@@ -10,15 +10,24 @@ namespace Api.Data
 
         }
 
-        public DbSet<UsuarioModel> Usuario { get; set; }
-        public DbSet<ObjetoModel> Objeto { get; set; }
-        public DbSet<ObservacoesModel> Observacoes { get; set; }
+        public DbSet<FaculdadeModel> Faculdade { get; set; }
+        public DbSet<AvaliacaoModel> Avaliacao { get; set; }
+        public DbSet<CadastroModel> Cadastro { get; set; }
+        public DbSet<LoginModel> Login { get; set; }
+        public DbSet<OfertarCaronaModel> OfertarCarona { get; set; }
+        public DbSet<SolicitarCaronaModel> SolicitarCarona { get; set; }
+        public DbSet<PerfilModel> Perfil { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new UsuarioMap());
-            modelBuilder.ApplyConfiguration(new ObjetoMap());
-            modelBuilder.ApplyConfiguration(new ObservacoesMap());
+            modelBuilder.ApplyConfiguration(new CadastroMap());
+            modelBuilder.ApplyConfiguration(new FaculdadeMap());
+            modelBuilder.ApplyConfiguration(new AvaliacaoMap());
+            modelBuilder.ApplyConfiguration(new LoginMap());
+            modelBuilder.ApplyConfiguration(new OfertarCaronaMap());
+            modelBuilder.ApplyConfiguration(new SolicitarCaronaMap());
+            modelBuilder.ApplyConfiguration(new PerfilMap());
             base.OnModelCreating(modelBuilder);
         }
 
