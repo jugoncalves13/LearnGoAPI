@@ -29,15 +29,6 @@ namespace Api.Controllers
             return Ok(usuario);
         }
 
-        [HttpGet("Login/{email}/{senha}")]
-        public async Task<bool> LoginAsync(string senha, string email)
-        {
-            UsuarioModel usuario = await _usuarioRepositorio.Login(senha, email);
-            if (usuario != null)
-                return true;
-            else
-                return false;
-        }
 
         [HttpPost("CreateUsuario")]
         public async Task<ActionResult<UsuarioModel>> InsertUsuario([FromBody] UsuarioModel usuarioModel)
@@ -45,6 +36,14 @@ namespace Api.Controllers
             UsuarioModel usuario = await _usuarioRepositorio.InsertUsuario(usuarioModel);
             return Ok(usuario);
         }
+
+        [HttpPost("Login")]
+        public async Task<ActionResult<bool>> Login([FromBody] UsuarioModel usuarioModel)
+        {
+            var usuario = await _usuarioRepositorio.Login(usuarioModel.UsuarioEmail, usuarioModel.UsuarioSenha);
+            return Ok(usuario);
+        }
+
 
         [HttpPut("UpdateUsuario/{id:int}")]
         public async Task<ActionResult<UsuarioModel>> UpdateUsuario(int id, [FromBody] UsuarioModel usuarioModel)

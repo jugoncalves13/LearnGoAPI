@@ -23,12 +23,7 @@ namespace Api.Controllers
             return Ok(observacoess);
         }
 
-        [HttpGet("GetObservacoesId/{id}")]
-        public async Task<ActionResult<ObservacoesModel>> GetObservacoesId(int id)
-        {
-            ObservacoesModel observacoes = await _observacoesRepositorio.GetById(id);
-            return Ok(observacoes);
-        }
+       
 
         [HttpPost("CreateObservacoes")]
         public async Task<ActionResult<ObservacoesModel>> InsertObservacoes([FromBody] ObservacoesModel observacoesModel)
