@@ -9,10 +9,10 @@ namespace Api.Data
         public void Configure(EntityTypeBuilder<AvaliacaoModel> builder)
         {
             builder.HasKey(x => x.AvaliacaoId);
-            builder.Property(x => x.AvaliacaoQuemAvaliou).IsRequired().HasMaxLength(255);
-            builder.Property(x => x.AvaliacaoAvaliado).IsRequired().HasMaxLength(255);
-            builder.Property(x => x.AvaliacaoComentario).IsRequired().HasMaxLength(255);
             builder.Property(x => x.CadastroId).IsRequired();
+            builder.HasKey(x => x.PerfilId);
+            builder.Property(x => x.AvaliacaoComentario).IsRequired().HasMaxLength(255);
+           
         }
     }
 }

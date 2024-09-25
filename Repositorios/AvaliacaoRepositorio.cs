@@ -40,8 +40,6 @@ namespace Api.Repositorios
             }
             else
             {
-                avaliacoes.AvaliacaoQuemAvaliou = avaliacao.AvaliacaoQuemAvaliou;
-                avaliacoes.AvaliacaoAvaliado = avaliacao.AvaliacaoAvaliado;
                 avaliacoes.AvaliacaoComentario = avaliacao.AvaliacaoComentario;
                 _dbContext.Avaliacao.Update(avaliacoes);
                 await _dbContext.SaveChangesAsync();
