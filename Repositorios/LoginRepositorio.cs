@@ -24,6 +24,20 @@ namespace Api.Repositorios
             return await _dbContext.Login.FirstOrDefaultAsync(x => x.LoginId == id);
         }
 
+        public async Task<bool> Login(string email, string senha)
+        {
+            var login = await _dbContext.Login.FirstOrDefaultAsync(x => x.LoginEmail == email && x.LoginSenha == senha);
+
+            if (login != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public async Task<LoginModel> InsertLogin(LoginModel login)
         {
             await _dbContext.Login.AddAsync(login);
@@ -62,6 +76,6 @@ namespace Api.Repositorios
             return true;
         }
 
-
+        
     }
 }

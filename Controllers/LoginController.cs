@@ -22,10 +22,24 @@ namespace Api.Controllers
             return Ok(logins);
         }
 
+        [HttpGet("GetLoginId/{id}")]
+        public async Task<ActionResult<LoginModel>> GetLoginId(int id)
+        {
+            LoginModel usuario = await _loginRepositorio.GetById(id);
+            return Ok(usuario);
+        }
+
         [HttpPost("CreateLogin")]
         public async Task<ActionResult<LoginModel>> InsertLogin([FromBody] LoginModel loginModel)
         {
             LoginModel login = await _loginRepositorio.InsertLogin(loginModel);
+            return Ok(login);
+        }
+
+        [HttpPost("Login")]
+        public async Task<ActionResult<bool>> Login([FromBody] LoginModel loginModel)
+        {
+            var login = await _loginRepositorio.Login(loginModel.LoginEmail, loginModel.LoginSenha);
             return Ok(login);
         }
 
