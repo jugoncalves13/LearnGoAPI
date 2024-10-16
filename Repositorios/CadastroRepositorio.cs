@@ -68,6 +68,17 @@ namespace Api.Repositorios
             return true;
         }
 
+        public async Task<CadastroModel> Login( string email, string password )
+        {
+            CadastroModel usuario;
+            
+            usuario = await _dbContext.Cadastro.FirstOrDefaultAsync(x => x.CadastroEmail == email && x.CadastroSenha == password);
+
+            return usuario;
+
+
+        }
+
        
     }
 }

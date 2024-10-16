@@ -10,7 +10,7 @@ namespace Api.Data
         {
             builder.HasKey(x => x.AvaliacaoId);
             builder.Property(x => x.CadastroId).IsRequired();
-            builder.HasKey(x => x.PerfilId);
+            builder.HasKey(x => x.CaronaId);
             builder.Property(x => x.AvaliacaoComentario).IsRequired().HasMaxLength(255);
            
         }

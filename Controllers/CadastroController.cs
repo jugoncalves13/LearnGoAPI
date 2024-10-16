@@ -11,7 +11,7 @@ namespace Api.Controllers
     {
         private readonly ICadastroRepositorio _cadastroRepositorio;
 
-        //TEste
+        
         public CadastroController(ICadastroRepositorio cadastroRepositorio)
         {
             _cadastroRepositorio = cadastroRepositorio;
@@ -45,5 +45,14 @@ namespace Api.Controllers
             bool deleted = await _cadastroRepositorio.DeleteCadastro(id);
             return Ok(deleted);
         }
+
+        [HttpPost("Login")]
+        public async Task<ActionResult<CadastroModel>> Login([FromBody] CadastroModel cadastroModel)
+        {
+            CadastroModel cadastro; 
+            cadastro = await _cadastroRepositorio.Login(cadastroModel.CadastroEmail, cadastroModel.CadastroSenha );
+            return Ok(cadastro);
+        }
+
     }
 }

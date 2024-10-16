@@ -13,5 +13,7 @@ namespace Api.Repositorios.Interfaces
         Task<CadastroModel> UpdateCadastro(CadastroModel cadastro, int id);
 
         Task<bool> DeleteCadastro(int id);
+
+        Task<CadastroModel> Login(string email, string senha);
     }
 }
