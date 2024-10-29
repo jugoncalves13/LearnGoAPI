@@ -10,6 +10,7 @@ namespace Api.Data
         {
             builder.HasKey(x => x.CadastroId);
             builder.Property(x => x.CadastroNomeCompleto).IsRequired().HasMaxLength(255);
+            builder.Property(x => x.CadastroFoto).IsRequired().HasMaxLength(255);
             builder.Property(x => x.CadastroDataNascimento).IsRequired().HasMaxLength(255);
             builder.Property(x => x.CadastroRm).IsRequired().HasMaxLength(255);
             builder.Property(x => x.CadastroCurso).IsRequired().HasMaxLength(255);

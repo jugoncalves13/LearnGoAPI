@@ -24,6 +24,13 @@ namespace Api.Controllers
             return Ok(cadastros);
         }
 
+        [HttpGet("GetById/{id:int}")]
+        public async Task<ActionResult<List<CadastroModel>>> GetById(int id )
+        {
+            CadastroModel cadastro = await _cadastroRepositorio.GetById(id);
+            return Ok(cadastro);
+        }
+
         [HttpPost("CreateCadastro")]
         public async Task<ActionResult<CadastroModel>> InsertCadastro([FromBody] CadastroModel cadastroModel)
         {

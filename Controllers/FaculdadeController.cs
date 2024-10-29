@@ -22,6 +22,13 @@ namespace Api.Controllers
             return Ok(faculdades);
         }
 
+        [HttpGet("GetById/{id:int}")]
+        public async Task<ActionResult<FaculdadeModel>> GetById(int id )
+        {
+            FaculdadeModel faculdade = await _faculdadeRepositorio.GetById( id );
+            return Ok(faculdade);
+        }
+
 
         [HttpPost("CreateFaculdade")]
         public async Task<ActionResult<FaculdadeModel>> InsertFaculdade([FromBody] FaculdadeModel faculdadeModel)

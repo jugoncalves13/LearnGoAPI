@@ -42,6 +42,7 @@ namespace Api.Repositorios
             {
                 cadastros.CadastroNomeCompleto = cadastro.CadastroNomeCompleto;
                 cadastros.CadastroDataNascimento = cadastro.CadastroDataNascimento;
+                cadastros.CadastroFoto = cadastro.CadastroFoto;
                 cadastros.CadastroRm = cadastro.CadastroRm;
                 cadastros.CadastroCurso = cadastro.CadastroCurso;
                 cadastros.CadastroEmail = cadastro.CadastroEmail;

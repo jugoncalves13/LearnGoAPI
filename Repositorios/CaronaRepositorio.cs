@@ -2,6 +2,7 @@
 using Api.Models;
 using Api.Repositorios.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Any;
 
 namespace Api.Repositorios
 {
