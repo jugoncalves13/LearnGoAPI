@@ -13,7 +13,6 @@ namespace Api.Data
         public DbSet<FaculdadeModel> Faculdade { get; set; }
         public DbSet<AvaliacaoModel> Avaliacao { get; set; }
         public DbSet<CadastroModel> Cadastro { get; set; }
-        public DbSet<CaronaTipoModel> CaronaTipo { get; set; }
         public DbSet<CaronaModel> Carona { get; set; }
         public DbSet<CaronaHasCadastroModel> CaronaHasCadastro { get; set; }
        
@@ -23,7 +22,6 @@ namespace Api.Data
             modelBuilder.ApplyConfiguration(new CadastroMap());
             modelBuilder.ApplyConfiguration(new FaculdadeMap());
             modelBuilder.ApplyConfiguration(new AvaliacaoMap());
-            modelBuilder.ApplyConfiguration(new CaronaTipoMap());
             modelBuilder.ApplyConfiguration(new CaronaMap());
             modelBuilder.ApplyConfiguration(new CaronaHasCadastroMap());
             base.OnModelCreating(modelBuilder);

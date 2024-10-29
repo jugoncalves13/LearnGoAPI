@@ -9,8 +9,8 @@ namespace Api.Data
         public void Configure(EntityTypeBuilder<CaronaHasCadastroModel> builder)
         {
             builder.HasKey(x => x.CaronaHasCadastroId);
-            builder.HasKey(x => x.CaronaId);
-            builder.HasKey(x => x.CadastroId);
+            builder.Property(x => x.CaronaId).IsRequired();
+            builder.Property(x => x.CadastroId).IsRequired();
 
 
         }

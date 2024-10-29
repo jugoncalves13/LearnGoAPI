@@ -8,7 +8,6 @@
         public string CaronaVeiculo { get; set; } = string.Empty;
         public string CaronaOrigem { get; set; } = string.Empty;
         public string CaronaDestino { get; set; } = string.Empty;
-        public int CaronaTipoId { get; set; }
         public int CadastroId { get; set; }
 
         public static implicit operator List<object>(CaronaModel v)

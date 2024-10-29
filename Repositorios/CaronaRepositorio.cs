@@ -46,7 +46,6 @@ namespace Api.Repositorios
                 caronas.CaronaVeiculo = carona.CaronaVeiculo;
                 caronas.CaronaOrigem = carona.CaronaOrigem;
                 caronas.CaronaDestino = carona.CaronaDestino;
-
                 _dbContext.Carona.Update(caronas);
                 await _dbContext.SaveChangesAsync();
             }

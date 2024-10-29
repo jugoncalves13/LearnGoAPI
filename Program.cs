@@ -19,7 +19,6 @@ builder.Services.AddEntityFrameworkSqlServer()
 builder.Services.AddScoped <IFaculdadeRepositorio, FaculdadeRepositorio>();
 builder.Services.AddScoped<IAvaliacaoRepositorio, AvaliacaoRepositorio>();
 builder.Services.AddScoped<ICadastroRepositorio, CadastroRepositorio>();
-builder.Services.AddScoped<ICaronaTipoRepositorio, CaronaTipoRepositorio>();
 builder.Services.AddScoped<ICaronaRepositorio, CaronaRepositorio>();
 builder.Services.AddScoped<ICaronaHasCadastroRepositorio, CaronaHasCadastroRepositorio>();
 

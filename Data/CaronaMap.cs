@@ -14,7 +14,6 @@ namespace Api.Data
             builder.Property(x => x.CaronaVeiculo).IsRequired().HasMaxLength(255);
             builder.Property(x => x.CaronaOrigem).IsRequired().HasMaxLength(255);
             builder.Property(x => x.CaronaDestino).IsRequired().HasMaxLength(255);
-            builder.HasKey(x => x.CaronaTipoId);
             builder.HasKey(x => x.CadastroId);
         }
     }
