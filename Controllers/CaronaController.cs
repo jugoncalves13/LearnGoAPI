@@ -15,6 +15,13 @@ namespace Api.Controllers
             _caronaRepositorio = caronaRepositorio;
         }
 
+        [HttpGet("FiltroCarona/{origem}/{destino}")]
+        public async Task<ActionResult<List<CaronaModel>>> FiltroCarona( String origem, String destino )
+        {
+            List<CaronaModel> caronas = await _caronaRepositorio.FiltroCarona( origem, destino );
+            return Ok(caronas);
+        }
+
         [HttpGet("GetAllCarona")]
         public async Task<ActionResult<List<CaronaModel>>> GetAllCarona()
         {

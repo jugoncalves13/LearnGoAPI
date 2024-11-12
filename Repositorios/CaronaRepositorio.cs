@@ -20,6 +20,12 @@ namespace Api.Repositorios
             return await _dbContext.Carona.ToListAsync();
         }
 
+        public async Task<List<CaronaModel>> FiltroCarona(String origem, String destino )
+        {
+
+            return await _dbContext.Carona.Where( c => c.CaronaDestino.Equals( destino ) && c.CaronaOrigem.Equals( origem ) ).ToListAsync();
+        }
+
         public async Task<CaronaModel> GetById(int id)
         {
             return await _dbContext.Carona.FirstOrDefaultAsync(x => x.CaronaId == id);
@@ -27,6 +33,7 @@ namespace Api.Repositorios
 
         public async Task<CaronaModel> InsertCarona(CaronaModel carona)
         {
+
             await _dbContext.Carona.AddAsync(carona);
             await _dbContext.SaveChangesAsync();
             return carona;

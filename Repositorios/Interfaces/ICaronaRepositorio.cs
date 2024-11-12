@@ -7,6 +7,8 @@ namespace Api.Repositorios.Interfaces
     {
         Task<List<CaronaModel>> GetAll();
 
+        Task<List<CaronaModel>> FiltroCarona( String origem, String destino);
+
         Task<CaronaModel> GetById(int id);
 
         Task<CaronaModel> InsertCarona(CaronaModel carona);
